@@ -113,6 +113,7 @@ def lineSphere(p0, p1, ball):
 def lineAABB(p0, p1, dist, aabb):
     # https://www.gamasutra.com/view/feature/131790/simple_intersection_tests_for_games.php?print=1
     # aabb should have the attributes of P, E as center point and extents
+    if dist == 0: return True
     mid = [(p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2, (p0[2] + p1[2]) / 2]  # mid point
     I = [(p1[0] - p0[0]) / dist, (p1[1] - p0[1]) / dist, (p1[2] - p0[2]) / dist]  # unit direction
     hl = dist / 2  # radius
